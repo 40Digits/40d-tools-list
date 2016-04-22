@@ -38,13 +38,15 @@ postcss --map -u postcss-import -u postcss-cssnext -u cssnano --no-cssnano.autop
 - Inline source maps
 - Disables autoprefixer inside of cssnano because cssnext already uses it
 
-**Requires:**
+**Dependencies:**
 
-- autoprefixer: ^6.3.3
-- postcss-cli: ^2.5.1
-- postcss-import: ^8.0.2
-- postcss-cssnext: ^2.4.0
-- cssnano: ^3.5.2
+```json
+"autoprefixer": "^6.3.3",
+"postcss-cli": "^2.5.1",
+"postcss-import": "^8.0.2",
+"postcss-cssnext": "^2.4.0",
+"cssnano": "^3.5.2"
+```
 
 ===
 
@@ -58,11 +60,13 @@ node-sass --source-map true --source-map-embed --output-style compressed --inclu
 - Autoprefixed
 - Ability to `@import` other `.scss` files that are within `_src/sass` (via `--include-path`) from the entry file (`style.scss`)
 
-**Requires:**
+**Dependencies:**
 
-- node-sass: ^3.4.2
-- autoprefixer: ^6.3.3
-- postcss-cli: ^2.5.1
+```json
+"node-sass": "^3.4.2",
+"autoprefixer": "^6.3.3",
+"postcss-cli": "^2.5.1"
+```
 
 ===
 
@@ -74,10 +78,13 @@ node _src/sass/build.js assets/css
 - Autoprefixer utilized
 - `_src/sass/build.js` references [this file](./sass-autoprefixer-with-globbing.js)
 
-**Requires:**
+**Requires node >= 4.0**
 
-- node: >=4.0
-- node-sass: ^3.4.2
-- autoprefixer: ^6.3.3
-- glob: ^7.0.3
-- postcss: ^5.0.19
+**Dependencies:**
+
+```json
+"node-sass": "^3.4.2",
+"autoprefixer": "^6.3.3",
+"glob": "^7.0.3",
+"postcss": "^5.0.19"
+```
