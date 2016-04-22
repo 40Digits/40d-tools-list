@@ -25,6 +25,7 @@ __Legend__
 - [errorify](https://github.com/zertosh/errorify) `>``{}` - Browserify plugin that writes the error message of a failed build to the output file, rendering it in the browser.
 - [minifyify](https://github.com/ben-ng/minifyify) `>``{}` - Minify your browserify bundle without losing the sourcemap.
 - [reactify](https://github.com/andreypopp/reactify) `>``{}` - Browserify transform for JSX (superset of JavaScript used in React library by Facebook)
+- [watchify](https://github.com/substack/watchify) `>``{}` - Watch mode for browserify builds. As you update files, bundles will be automatically incrementally rebuilt on the fly.
 - [webpack](https://github.com/webpack/webpack) `>``{}` - Bundle JavaScript files for usage in a browser. Also capable of transforming, bundling, or packaging just about any resource or asset.
 
 ## Recipes
@@ -66,6 +67,31 @@ browserify -t [ babelify --presets [ es2015 ] ] -t browserify-shim -t browserify
 - browserify-shim: ^3.8.12
 - browserify-ejs: ^0.0.2
 - minifyify: ^7.3.3
+
+===
+
+```bash
+watchify _src/js/main.js -vd -p [minifyify --map assets/js/main.js.map --output assets/js/
+main.js.map] -t [ babelify --presets [ es2015 ] ] -t browserify-shim -t browserify-ejs -o assets/js/main.js
+```
+
+- Watches all files in the dependency graph of an entry file (`_src/js/main.js`)
+- Slow initial build, but lightning quick subsequent builds
+- Verbose logging (`-v`)
+- Transforms ES2015 to browser-friendly js
+- External source map and compression with minifyify
+- Transform EJS templates
+- Browserify-shim to shim in globals and work with non-CommonJS modules
+
+**Requires:**
+
+- babel-preset-es2015: ^6.6.0
+- babelify: ^7.2.0
+- browserify: ^13.0.0
+- browserify-shim: ^3.8.12
+- browserify-ejs: ^0.0.2
+- minifyify: ^7.3.3
+- watchify: ^3.7.0
 
 ===
 
