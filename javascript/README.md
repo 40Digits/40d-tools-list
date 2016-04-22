@@ -41,12 +41,14 @@ browserify -t [ babelify --presets [ es2015 ] ] -p [ minifyify --map bundle.js.m
 - Transforms ES2015 to browser-friendly js
 - External source map and compression with minifyify
 
-**Requires:**
+**Dependencies:**
 
-- babel-preset-es2015: ^6.6.0
-- babelify: ^7.2.0
-- browserify: ^13.0.0
-- minifyify: ^7.3.3
+```json
+"babel-preset-es2015": "^6.6.0",
+"babelify": "^7.2.0",
+"browserify": "^13.0.0",
+"minifyify": "^7.3.3"
+```
 
 ===
 
@@ -59,14 +61,16 @@ browserify -t [ babelify --presets [ es2015 ] ] -t browserify-shim -t browserify
 - Transform EJS templates
 - Browserify-shim to shim in globals and work with non-CommonJS modules
 
-**Requires:**
+**Dependencies:**
 
-- babel-preset-es2015: ^6.6.0
-- babelify: ^7.2.0
-- browserify: ^13.0.0
-- browserify-shim: ^3.8.12
-- browserify-ejs: ^0.0.2
-- minifyify: ^7.3.3
+```json
+"babel-preset-es2015": "^6.6.0",
+"babelify": "^7.2.0",
+"browserify": "^13.0.0",
+"browserify-shim": "^3.8.12",
+"browserify-ejs": "^0.0.2",
+"minifyify": "^7.3.3"
+```
 
 ===
 
@@ -83,15 +87,17 @@ main.js.map] -t [ babelify --presets [ es2015 ] ] -t browserify-shim -t browseri
 - Transform EJS templates
 - Browserify-shim to shim in globals and work with non-CommonJS modules
 
-**Requires:**
+**Dependencies:**
 
-- babel-preset-es2015: ^6.6.0
-- babelify: ^7.2.0
-- browserify: ^13.0.0
-- browserify-shim: ^3.8.12
-- browserify-ejs: ^0.0.2
-- minifyify: ^7.3.3
-- watchify: ^3.7.0
+```json
+"babel-preset-es2015": "^6.6.0",
+"babelify": "^7.2.0",
+"browserify": "^13.0.0",
+"browserify-shim": "^3.8.12",
+"browserify-ejs": "^0.0.2",
+"minifyify": "^7.3.3",
+"watchify": "^3.7.0"
+```
 
 ===
 
@@ -103,10 +109,13 @@ webpack -d --optimize-minimize _src/js/main.js assets/js/main.js
 - External source map (`-d`)
 - Minify (`--optimize-minimize`)
 
-**Requires:**
+**Dependencies:**
 
-- babel-preset-es2015: ^6.6.0
-- babel-loader: ^6.2.4
+```json
+"babel-preset-es2015": "^6.6.0",
+"babel-loader": "^6.2.4",
+"webpack": "^1.12.14"
+```
 
 ===
 
@@ -119,11 +128,13 @@ webpack -d --optimize-minimize --module-bind \"js=babel-loader?presets[]=es2015\
 - Minify (`--optimize-minimize`)
 - Transform ES2015 into browser-ready js (`--module-bind \"js=babel-loader?presets[]=es2015\"`)
 
-**Requires:**
+**Dependencies:**
 
-- babel-preset-es2015: ^6.6.0
-- babel-loader: ^6.2.4
-- webpack: ^1.12.14
+```json
+"babel-preset-es2015": "^6.6.0",
+"babel-loader": "^6.2.4",
+"webpack": "^1.12.14"
+```
 
 ===
 
@@ -137,12 +148,14 @@ webpack -d --optimize-minimize --module-bind \"js=babel-loader?presets[]=es2015\
 - Transform ES2015 into browser-ready js (`--module-bind \"js=babel-loader?presets[]=es2015\"`)
 - EJS loader to use EJS templates (`--module-bind \"ejs=ejs-compiled-loader\"`)
 
-**Requires:**
+**Dependencies:**
 
-- babel-preset-es2015: ^6.6.0
-- babel-loader: ^6.2.4
-- ejs-compiled-loader: ^2.1.1
-- webpack: ^1.12.14
+```json
+"babel-preset-es2015": "^6.6.0",
+"babel-loader": "^6.2.4"
+"ejs-compiled-loader": "^2.1.1",
+"webpack": "^1.12.14"
+```
 
 ===
 
@@ -156,9 +169,11 @@ webpack -d --optimize-minimize --module-bind \"js=babel-loader?presets[]=es2015&
 - Transform ES2015 into browser-ready js (the `presets[]=es2015` part of `--module-bind \"js=babel-loader?presets[]=es2015&presets[]=react\"`)
 - Transform JSX/React into browser-ready js (the `&presets[]=react` part of `--module-bind \"js=babel-loader?presets[]=es2015&presets[]=react\"`)
 
-**Requires:**
+**Dependencies:**
 
-- babel-preset-es2015: ^6.6.0
-- babel-preset-react: ^6.5.0
-- babel-loader: ^6.2.4
-- webpack: ^1.12.14
+```json
+"babel-preset-es2015": "^6.6.0",
+"babel-preset-react": "^6.5.0",
+"babel-loader": "^6.2.4",
+"webpack": "^1.12.14"
+```
